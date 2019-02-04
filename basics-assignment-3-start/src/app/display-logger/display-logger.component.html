@@ -1,0 +1,12 @@
+<div>
+  <button (click)="toggleContent()" class="btn btn-info">Display Details</button>
+  <p *ngIf="isContentVisible" class="display-content">{{content}}</p>
+
+  <h4>Display logs: </h4>
+  <p *ngFor="let log of togglingLog; index as i"
+      [ngStyle]="{backgroundColor: getColor(i)}"
+      [ngClass]="{'log-text': i >= limit}"
+  >
+    {{log}}
+  </p>
+</div>
